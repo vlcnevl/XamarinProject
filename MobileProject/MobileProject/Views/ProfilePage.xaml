@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.Views.ProfilePage"
+             xmlns:controls="clr-namespace:Xam.Plugin.SimpleBottomDrawer;assembly=Xam.Plugin.SimpleBottomDrawer"
+             xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+
+    <ContentPage.Content>
+        <ScrollView x:Name="scroll" HeightRequest="850">
+            <StackLayout Padding="40">
+                <Frame CornerRadius="100" 
+           HeightRequest="100"
+           WidthRequest="100"
+           HorizontalOptions="Center"
+           Padding="0"
+           IsClippedToBounds="True">
+                    <Image
+                        x:Name="profileImage"
+                        Source="worldwide.jpg" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ProfilePhotoClicked"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Label Text="İsim" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <Entry x:Name="UserNameEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Soyisim" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <Entry x:Name="UserLastNameEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Kullanıcı Adı" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <Entry x:Name="UserNickNameEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Doğum Tarihi" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <DatePicker 
+                                Date="{x:Static system:DateTime.Today}"
+                                Format="dd MM yyyy"
+                                MinimumDate="01/01/1980"
+                                x:Name="UserBirthDate"
+                                HorizontalOptions="FillAndExpand"
+                                DateSelected="DatePicker_DateSelected"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="E- Posta" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <Label x:Name="userEmailLabel" VerticalTextAlignment="Center" Text="E-Posta" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Telefon" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <Entry x:Name="UserTelephoneEntry" Keyboard="Telephone" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Adres" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                        <Entry x:Name="UserAddressEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                    </StackLayout>
+                </Frame>
+                <Label Text="Hakkımda" Margin="30,0,100,-15" />
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="20,20,20,0" CornerRadius="50" HorizontalOptions="FillAndExpand" HeightRequest="100">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Editor x:Name="UserAboutMeEntry" Text="I am an Editor" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal" Margin="-35,15,20,0">
+                    <Button  Clicked="AddCv_Clicked" Text="Cv Ekle" BackgroundColor="DarkTurquoise" Margin="50,5,50,0" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+                    <Image x:Name="resultImage" />
+                    <Button  Clicked="SaveProfile_Clicked" Text="Kaydet" BackgroundColor="DarkTurquoise" Margin="50,5,50,0" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

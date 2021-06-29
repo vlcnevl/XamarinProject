@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xf:BottomBarPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.Views.NavbarBottom"
+             xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+             xmlns:MobileProject="clr-namespace:MobileProject.Views"
+             NavigationPage.HasNavigationBar="False"
+                >
+
+    
+    <MobileProject:MapPage Title="Harita"  IconImageSource="worldwide.png"/>
+    <MobileProject:WorkPage Title="İlanlar" IconImageSource="workTabbed.png" />
+    <MobileProject:MessagePage Title="Mesaj" IconImageSource="chat.png"/>
+    <MobileProject:SettingsPage Title="Ayarlar" IconImageSource="cog.png"/>
+
+</xf:BottomBarPage>

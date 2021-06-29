@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:converters="clr-namespace:MobileProject.Models.Converters" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="MobileProject.Views.MessagePage">
+
+   
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid x:Name="pageGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Entry HorizontalTextAlignment="Center"  x:Name="sendUserEmail" Placeholder="Email" Margin="10"></Entry>
+        <ListView
+             x:Name="messageList" 
+            Grid.Row="1"
+            FlowDirection="RightToLeft"
+            HasUnevenRows="True"
+            ItemsSource="{Binding Messages}"
+            SeparatorVisibility="None"
+            VerticalOptions="End">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid IsVisible="{Binding IsSystemMessage}">
+                                <Label
+                                    
+                                    Margin="20,5"
+                                    FontSize="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding Message}"
+                                    TextColor="#969daf" />
+                            </Grid>
+                            <Grid IsVisible="{Binding IsSystemMessage, Converter={StaticResource InverseBool}}">
+                                <Grid IsVisible="{Binding IsOwnMessage, Converter={StaticResource InverseBool}}" RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="5*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        Grid.Column="1"
+                                        Margin="10,0"
+                                        HorizontalOptions="End"
+                                        HorizontalTextAlignment="End"
+                                        Text="{Binding User}"
+                                        TextColor="#969daf" />
+                                    <Grid
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="20,5"
+                                        Padding="10"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="FillAndExpand">
+                                        <BoxView
+                                            BackgroundColor="#25D366"
+                                            CornerRadius="30"
+                                            HorizontalOptions="FillAndExpand" />
+                                        <Label
+                                            Margin="10"
+                                            LineBreakMode="CharacterWrap"
+                                            Text="{Binding Message}"
+                                            TextColor="White"
+                                            VerticalOptions="FillAndExpand" />
+                                    </Grid>
+                                </Grid>
+
+                                <Grid  RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="5*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        Margin="10,0"
+                                        HorizontalOptions="Start"
+                                        Text="{Binding User}"
+                                        TextColor="#969daf" />
+                                    <Grid
+                                        Grid.Row="1"
+                                        Margin="20,5"
+                                        Padding="10"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="FillAndExpand">
+                                        <BoxView
+                                            BackgroundColor="#41cfd9"
+                                            CornerRadius="30"
+                                            HorizontalOptions="FillAndExpand" />
+                                        <Label
+                                            Margin="10"
+                                            LineBreakMode="CharacterWrap"
+                                            Text="{Binding Message}"
+                                            TextColor="White"
+                                            VerticalOptions="FillAndExpand" />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid
+            Grid.Row="2"
+            ColumnSpacing="0"
+            RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="70" />
+            </Grid.ColumnDefinitions>
+            <Entry
+               x:Name="messageEntry"
+                BackgroundColor="#f5f9fa"
+               
+                PlaceholderColor="#969daf"
+                Text="{Binding Message}"
+                TextColor="Black" />
+            <yummy:PancakeView CornerRadius="20"  Grid.Column="1">
+                <Button
+                BackgroundColor="#41cfd9"
+                Clicked="Button_Clicked" 
+                HorizontalOptions="FillAndExpand"
+                ImageSource="send.png"
+                VerticalOptions="FillAndExpand" />
+            </yummy:PancakeView>
+        </Grid>
+    </Grid>
+
+
+    
+</ContentPage>

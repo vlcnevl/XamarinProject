@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="MobileProject.Views.AddWork"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350">
+        <yummy:PancakeView BackgroundColor="LightYellow"  HeightRequest="600" HorizontalOptions="FillAndExpand" CornerRadius="45,45,45,45" >
+            <yummy:PancakeView.Shadow>
+                <yummy:DropShadow Color="Black" Offset="10,10" />
+            </yummy:PancakeView.Shadow>
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+                    <yummy:GradientStop Color="LightBlue" Offset="0" />
+                    <yummy:GradientStop Color="Beige" Offset="1" />
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+
+            <StackLayout>
+                <Image Source="minus.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="50" WidthRequest="100"  />
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="İlan Ekle" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,0,0,0" />
+            </StackLayout>
+                <ScrollView x:Name="scroll" HeightRequest="850">
+                    <StackLayout Margin="0,25,0,0">
+                        <Label Text="İlan Başlığı" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkTitleEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Kategori" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkCategoryEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Çalışma Şekli" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkHıwEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Öğrenim Durumu" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkEducationStatusEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Pozisyon" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkPositionLevelEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Deneyim" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkExperienceEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Şirket İsmi" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkCompanyNameEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Adres" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkAddressEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Şirket Telefonu" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkCompanyPhoneEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Şirket Maili" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Entry x:Name="WorkCompanyEmailEntry" VerticalTextAlignment="Center" Text="" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" HeightRequest="40"/>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="Açıklama" Margin="50,0,100,-15" />
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="40,20,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                <Editor x:Name="WorkExplanationEntry" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Button Clicked="PublishWork" Text="İlanı Yayınla" BackgroundColor="LightGray" Margin="50,5,50,20" TextColor="White" FontAttributes="Bold" CornerRadius="20"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+        </yummy:PancakeView>
+    </StackLayout>
+
+</pages:PopupPage>

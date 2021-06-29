@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
+             x:Class="MobileProject.Views.SettingsPage">
+    
+
+    <sv:SettingsView HasUnevenRows="true">
+        
+
+        <sv:Section Title="Ayarlar"   >
+            <sv:CommandCell x:Name="commandCell" IconSource="account.png" IconSize="60,60" IconRadius="30"
+            Title="" Description="Profili düzenle"
+            Command="{Binding ToProfileCommand}" Tapped="CommandCell_Tapped"
+            KeepSelectedUntilBack="true"/>
+            <sv:CommandCell x:Name="myWorks" IconSource="work.png" IconSize="60,60" IconRadius="30"
+            Title="İlanlarım" Description=""
+            Command="{Binding ToProfileCommand}" Tapped="myWorks_Tapped"
+            KeepSelectedUntilBack="true"/>
+            <sv:CommandCell x:Name="myApplication" IconSource="work.png" IconSize="60,60" IconRadius="30"
+            Title="Başvurularım" Description=""
+            Command="{Binding ToProfileCommand}" Tapped="myApplication_Tapped"
+            KeepSelectedUntilBack="true"/>
+            <sv:ButtonCell  Title="Çıkış Yap" TitleColor="Red" 
+             TitleAlignment="Center"  Tapped="Logout_Tapped" />
+        </sv:Section>
+    </sv:SettingsView>
+</ContentPage>  

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.Views.WorkDetailPage"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    
+    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350">
+        <yummy:PancakeView BackgroundColor="LightYellow"  HeightRequest="500" HorizontalOptions="FillAndExpand" CornerRadius="45,45,45,45" >
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+                    <yummy:GradientStop Color="LightBlue" Offset="0" />
+                    <yummy:GradientStop Color="Beige" Offset="1" />
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+
+            <StackLayout>
+                <Image Source="minus.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="50" WidthRequest="100" Margin="0,0,0,-15" />
+                <ScrollView x:Name="scroll" HeightRequest="850">
+                    <StackLayout >
+                        <Label HorizontalOptions="CenterAndExpand" x:Name="WorkTittleLabel"  FontSize="Large" TextColor="Black" FontAttributes="Bold"/>
+                        <StackLayout Margin="50,0,0,0">
+                            <Label Text="Şirket İsmi" FontSize="Medium"/>
+                            <Label x:Name="WorkCompanyNameLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="Kategori" FontSize="Medium"/>
+                            <Label x:Name="WorkCategoryLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="Çalışma Şekli" FontSize="Medium"/>
+                            <Label x:Name="WorkHıwLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="Pozisyon Seviyesi" FontSize="Medium"/>
+                            <Label x:Name="WorkPositionLevelLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="Eğitim Seviyesi" FontSize="Medium"/>
+                            <Label x:Name="WorkEducationStatusLabel"  Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="Tecrübe" FontSize="Medium"/>
+                            <Label x:Name="WorkExperienceLabel"  Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="Adres" FontSize="Medium"/>
+                            <Label x:Name="WorkAddressLabel"  Margin="25,0,10,0" FontSize="Medium" HorizontalOptions="Center" />
+                            <Label Text="İletişim Numarası" FontSize="Medium"/>
+                            <Label x:Name="WorkCompanyPhoneLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="İletişim Maili" FontSize="Medium"/>
+                            <Label x:Name="WorkCompanyMailLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                            <Label Text="İş Tanımı" FontSize="Medium"/>
+                            <Label x:Name="WorkExplanationLabel" Margin="25,0,0,0" FontSize="Medium"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout Orientation="Horizontal" Margin="70,15,50,5">
+                    <Button Clicked="MessageButton_Clicked"  Text="Mesaj" BackgroundColor="DarkTurquoise"  TextColor="White" FontAttributes="Bold" CornerRadius="20" Margin="0,0,30,0"/>
+                    <Button Clicked="ApplyButton_Clicked" Text="Başvur" BackgroundColor="DarkTurquoise"  TextColor="White" FontAttributes="Bold" CornerRadius="20"/>
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </yummy:PancakeView>
+    </StackLayout>
+</pages:PopupPage>

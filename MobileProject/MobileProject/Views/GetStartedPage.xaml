@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:style="clr-namespace:MobileProject.Common.Styles" xmlns:sharpnado="http://sharpnado.com" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="MobileProject.Views.GetStartedPage"
+             NavigationPage.HasNavigationBar="False">
+
+
+
+    <!--<ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <style:BackgroundView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <StackLayout>
+                <Label Text="Başlangıç ekranı" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+            <sharpnado:Shadows x:Name="GetStartedButtonShadow"
+                               HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               Shades="{sharpnado:SingleShade  Color=White, Opacity=0.}">
+                
+                    <Button Clicked="" Text="Devam" BackgroundColor="DarkTurquoise"  TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+ 
+               
+            </sharpnado:Shadows>
+        </Grid>
+    </ContentPage.Content>-->
+
+
+    
+    <AbsoluteLayout>
+        <CarouselView
+            x:Name="deneme"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IndicatorView="indicatorview"
+            ItemsSource="{Binding}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <AbsoluteLayout>
+                        <StackLayout
+                            AbsoluteLayout.LayoutBounds=
+                            "0.5,0.3,AutoSize,AutoSize"
+                            AbsoluteLayout.LayoutFlags=
+                            "PositionProportional"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontSize="Title"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding .}"
+                                VerticalOptions="Center" />
+                           
+                        </StackLayout>
+                        
+                    </AbsoluteLayout>
+                 
+                </DataTemplate>
+                
+            </CarouselView.ItemTemplate>
+            
+        </CarouselView>
+
+        <IndicatorView
+            x:Name="indicatorview"
+            AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            IndicatorColor="LightGray"
+            IndicatorSize="10"
+            SelectedIndicatorColor="Black" />
+        <Button ImageSource="next.png" AbsoluteLayout.LayoutBounds="320,600,60,35" x:Name="nextButton" Clicked="nextButton_Clicked" BackgroundColor="orange"  TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+        <Button AbsoluteLayout.LayoutBounds="320,20,75,50" x:Name="skipButton" Clicked="skipButton_Clicked"  Text="Geç" BackgroundColor="Transparent"  TextColor="Black" FontAttributes="Bold" CornerRadius="30"/>
+    </AbsoluteLayout>
+
+
+</ContentPage>

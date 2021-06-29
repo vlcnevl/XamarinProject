@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sharpnado="http://sharpnado.com"
+             x:Class="MobileProject.Views.Login"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="Beige">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350">
+                <yummy:PancakeView BackgroundColor="White"  HeightRequest="400" HorizontalOptions="FillAndExpand" CornerRadius="50,50,50,50" >
+                    <yummy:PancakeView.Shadow>
+                        <yummy:DropShadow Color="Black" Offset="10,10" />
+                    </yummy:PancakeView.Shadow>
+                    <StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Giriş Yap" TextColor="Black" FontSize="30" FontAttributes="Bold" Margin="0,20,0,0" />
+                        </StackLayout>
+
+                        <StackLayout Margin="0,25,0,0">
+                            <!-- en dış-->
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="50,0,50,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" Margin="0,0,20,0">
+                                    <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                        <Image Source="email.png"/>
+                                    </Frame>
+                                    <Entry x:Name="UserEmailEntry" Placeholder="E-mail" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="50,10,50,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" Margin="0,0,20,0">
+                                    <!--içerdeki çizgi-->
+                                    <Frame CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                        <Image Source="lock.png"/>
+                                    </Frame>
+                                    <Entry IsPassword="True" x:Name="UserPasswordEntry" Placeholder="Password" TextColor="Black" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="25">
+                            <Label Text="Hâla Üye Olmadın mı ?" TextColor="DarkGray" FontSize="Small"/>
+                            <Label x:Name="signup"  Text="Üye Ol" TextColor="Black" FontAttributes="Bold" FontSize="Small">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SignupButtonClicked"/>
+                                </Label.GestureRecognizers>
+
+                            </Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Frame  WidthRequest="50" Padding="0" Margin="0" HeightRequest="50" CornerRadius="30" HasShadow="False">
+                                <Image Source="google.png" Aspect="Fill" Margin="0"/>
+                            </Frame>
+                            <Frame  WidthRequest="50" Padding="0" Margin="0" HeightRequest="50" CornerRadius="30" HasShadow="False">
+                                <Image Source="linkedin.png" Aspect="Fill" Margin="0"/>
+                            </Frame>
+                        </StackLayout>
+
+
+                        <ActivityIndicator x:Name="indicator"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center" 
+                                   BackgroundColor="Transparent"
+                                   Color="DarkGray"
+                                    Scale="0.5"/>
+                    </StackLayout>
+                </yummy:PancakeView>
+                
+                <StackLayout Margin="-37">
+
+                    <Grid ColumnDefinitions="64" RowDefinitions="64" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,0" >
+                        <Ellipse Fill="white" WidthRequest="64" HeightRequest="64"/>
+
+                        <Button Clicked="LoginButtonClicked" ContentLayout="Top,0" ImageSource="rightarrow.png" BorderWidth="3" BorderColor="Black"  Scale="0.85" CornerRadius="100"  BackgroundColor="White"/>
+
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+
+
+
+
+</ContentPage>

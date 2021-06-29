@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProject.Views.AppShell"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:c="clr-namespace:MobileProject.Controls"
+       xmlns:local="clr-namespace:MobileProject.Views"
+       NavigationPage.HasNavigationBar="False">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#fefefe</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="#3d83ff" />
+                <Setter Property="Shell.TitleColor" Value="#3d83ff" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#3d83ff"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#3d83ff"/>
+            </Style>
+            <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <c:CustomTabBar Style="{StaticResource BaseStyle}">
+        <c:CustomTabBar.LargeTab>
+            <Tab Title="New Task" Icon="google.png" >
+                <ShellContent ContentTemplate="{DataTemplate local:GetStartedPage}"/>
+               
+            </Tab>
+
+
+
+        </c:CustomTabBar.LargeTab>
+
+        <Tab Title="Dashboard" Icon="lock.png">
+            <ShellContent ContentTemplate="{DataTemplate local:GetStartedPage}" />
+        </Tab>
+
+        <Tab Title="Profile" Icon="lock.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Signup}" />
+        </Tab>
+
+    </c:CustomTabBar>
+
+
+</Shell>
