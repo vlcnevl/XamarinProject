@@ -1,5 +1,5 @@
 # XamarinProject
-Xamarin Fİnd A Job App 
+Xamarin Fİnd A Job App <br>
 Basic SignalRChat 
 <p float="left">
   <img src="photo/Login.png" width="150" />
